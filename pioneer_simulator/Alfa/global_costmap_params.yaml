@@ -1,0 +1,5 @@
+global_costmap:
+  global_frame: Alfa/map
+  robot_base_frame: Alfa/base_link_true
+  update_frequency: 5.0
+  static_map: true

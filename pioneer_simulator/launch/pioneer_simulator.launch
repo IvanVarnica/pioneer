@@ -1,0 +1,23 @@
+<launch>
+	
+	<!-- Vehicle names -->
+	<rosparam param="vehicleNames">['Alfa']</rosparam>	
+
+    
+    <node pkg="pioneer_simulator" name="pioneerSimulator" type="pioneerSimulator" />
+    
+
+
+  <node pkg="map_server" type="map_server" name="map_server1"
+        args="$(find pioneer_simulator)/map/testmap.yaml"  >     
+    <param name="frame_id" value="Alfa/map"/> 
+    <remap from="map" to="map"/>
+  </node>           
+
+    
+  <node pkg="tf" type="static_transform_publisher" name="laser_tf1"
+        args="0.3 0 0 0 0 0 Alfa/base_link_true Alfa/laser 50"/>
+
+    
+</launch>
+
