@@ -44,11 +44,13 @@ include_directories(${catkin_INCLUDE_DIRS})
 ## Declare a cpp executable
 add_executable(pioneerSimulator src/pioneerSimulator.cpp)
 add_executable(simple_navigation_goals src/simple_navigation_goals.cpp)
+add_executable(scanReader src/scanReader.cpp)
 
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(pioneerSimulator ${catkin_LIBRARIES})
 target_link_libraries(simple_navigation_goals ${catkin_LIBRARIES})
+target_link_libraries(scanReader ${catkin_LIBRARIES})
 
 
 # This prevents files being compiled before the necessary messages
