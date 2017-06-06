@@ -22,6 +22,10 @@ find_package(catkin REQUIRED COMPONENTS
 
 # Generate services in the 'srv' folder
 #add_service_files(FILES CommStatus.srv GetMyPlan.srv Removal.srv)
+ #add_service_files(
+   #FILES
+  # AddTwoInts.srv
+ #)
 
 # Generate added messages and services with any dependencies listed here
 generate_messages(DEPENDENCIES std_msgs geometry_msgs)
@@ -43,14 +47,28 @@ include_directories(${catkin_INCLUDE_DIRS})
 
 ## Declare a cpp executable
 add_executable(pioneerSimulator src/pioneerSimulator.cpp)
-add_executable(simple_navigation_goals src/simple_navigation_goals.cpp)
+add_executable(veh_status src/veh_status.cpp)
 add_executable(scanReader src/scanReader.cpp)
+add_executable(tf_listen src/tf_listen.cpp)
+add_executable(enterTruckMode src/enterTruckMode.cpp)
 
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(pioneerSimulator ${catkin_LIBRARIES})
-target_link_libraries(simple_navigation_goals ${catkin_LIBRARIES})
+target_link_libraries(veh_status ${catkin_LIBRARIES})
 target_link_libraries(scanReader ${catkin_LIBRARIES})
+target_link_libraries(tf_listen ${catkin_LIBRARIES})
+target_link_libraries(enterTruckMode ${catkin_LIBRARIES})
+
+
+
+#add_executable(add_two_ints_server src/add_two_ints_server.cpp)
+#target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
+#add_dependencies(add_two_ints_server pioneer_simulator_generate_service_cpp)
+
+#add_executable(add_two_ints_client src/add_two_ints_client.cpp)
+#target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
+#add_dependencies(add_two_ints_client pioneer_simulator_generate_service_cpp)
 
 
 # This prevents files being compiled before the necessary messages
