@@ -48,6 +48,8 @@ sensor_msgs::LaserScan scanResult;
 
 void readerCallback(sensor_msgs::LaserScan scaner){
 	
+	std::cout<<"scan je stigao"<<std::endl;
+	
 	if (scanON) {scanResult=scaner;
 		scanRecieved=1;
 	}

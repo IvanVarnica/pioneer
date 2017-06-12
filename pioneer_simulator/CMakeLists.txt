@@ -51,6 +51,7 @@ add_executable(veh_status src/veh_status.cpp)
 add_executable(scanReader src/scanReader.cpp)
 add_executable(tf_listen src/tf_listen.cpp)
 add_executable(enterTruckMode src/enterTruckMode.cpp)
+add_executable(local src/local.cpp)
 
 
 ## Specify libraries to link a library or executable target against
@@ -59,6 +60,7 @@ target_link_libraries(veh_status ${catkin_LIBRARIES})
 target_link_libraries(scanReader ${catkin_LIBRARIES})
 target_link_libraries(tf_listen ${catkin_LIBRARIES})
 target_link_libraries(enterTruckMode ${catkin_LIBRARIES})
+target_link_libraries(local ${catkin_LIBRARIES})
 
 
 
